@@ -1,54 +1,85 @@
-# Warehouse Management System
+# 📦 Warehouse Management System
 
-Sistem Manajemen Gudang berbasis web yang dibangun menggunakan React.js (Frontend) dan Node.js/Express (Backend), dengan integrasi API PT SSMS.
+> Sistem Manajemen Gudang berbasis web dengan integrasi REST API PT SSMS — dibangun menggunakan React.js dan Node.js/Express.
 
-## Tech Stack
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-- **Frontend:** React.js + Vite + TailwindCSS + Axios
-- **Backend:** Node.js + Express + Axios
-- **API:** PT SSMS REST API
+---
 
-## Fitur
+## ✨ Fitur Utama
 
-- Login dengan autentikasi via API
-- Menampilkan daftar barang dari API (Nama, Stok, Satuan)
-- Tambah barang baru
-- Edit barang yang sudah ada
-- Hapus barang
-- CRUD tetap berfungsi sebelum maupun sesudah data API diambil
-- Perubahan lokal tetap tersimpan saat Refresh data
-- Responsive design (mobile & desktop)
-- Loading skeleton & error handling
+| Fitur                     | Keterangan                                         |
+| ------------------------- | -------------------------------------------------- |
+| 🔐 **Login**              | Autentikasi via API dengan Bearer Token            |
+| 📋 **Tampil Barang**      | Ambil data dari API — Nama, Stok, Satuan           |
+| ➕ **Tambah Barang**      | Tambah data barang baru ke daftar                  |
+| ✏️ **Edit Barang**        | Ubah data barang yang sudah ada                    |
+| 🗑️ **Hapus Barang**       | Hapus barang dari daftar                           |
+| 🔄 **Persistent CRUD**    | Perubahan lokal tetap ada setelah Refresh data API |
+| ⚡ **Offline-first CRUD** | CRUD tetap bisa dilakukan sebelum data API dimuat  |
+| 📱 **Responsive**         | Tampilan optimal di mobile & desktop               |
+| ⏳ **Loading & Error**    | Skeleton loading dan pesan error yang informatif   |
 
-## Struktur Project
+---
 
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **React.js** + **Vite** — UI framework & build tool
+- **TailwindCSS** — utility-first styling
+- **Axios** — HTTP client untuk konsumsi API
+- **React Router DOM** — client-side routing
+
+### Backend
+
+- **Node.js** + **Express** — server & API proxy
+- **Axios** — forward request ke API PT SSMS
+- **dotenv** — manajemen environment variables
+- **CORS** — cross-origin request handler
+
+---
+
+## 📁 Struktur Project
+
+```
 warehouse-management/
 ├── backend/
-│ ├── index.js
-│ ├── routes/
-│ │ ├── auth.js
-│ │ └── items.js
-│ └── package.json
+│   ├── index.js              ← Entry point Express server
+│   ├── routes/
+│   │   ├── auth.js           ← Route login & autentikasi
+│   │   └── items.js          ← Route data barang
+│   ├── .env                  ← Environment variables (tidak di-commit)
+│   └── package.json
+│
 └── frontend/
-├── src/
-│ ├── pages/
-│ │ ├── Login.jsx
-│ │ └── Dashboard.jsx
-│ ├── components/
-│ │ ├── ItemList.jsx
-│ │ └── ItemForm.jsx
-│ └── services/
-│ └── api.js
-└── package.json
+    ├── src/
+    │   ├── pages/
+    │   │   ├── Login.jsx     ← Halaman login
+    │   │   └── Dashboard.jsx ← Halaman utama + CRUD
+    │   ├── components/
+    │   │   ├── ItemList.jsx  ← Tabel/list daftar barang
+    │   │   └── ItemForm.jsx  ← Modal form tambah & edit
+    │   └── services/
+    │       └── api.js        ← Semua axios API calls
+    └── package.json
+```
 
-## Cara Menjalankan Lokal
+---
+
+## 🚀 Cara Menjalankan Lokal
 
 ### Prasyarat
 
-- Node.js v18 atau lebih baru
-- npm
+- **Node.js** v18 atau lebih baru → [Download](https://nodejs.org)
+- **npm** (otomatis terpasang bersama Node.js)
+- **Git** → [Download](https://git-scm.com)
 
-### 1. Clone repository
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/GalvaNova/warehouse-management.git
@@ -62,10 +93,12 @@ cd backend
 npm install
 ```
 
-Buat file `.env` di folder `backend`:
+Buat file **`.env`** di dalam folder `backend/`:
 
+```env
 PORT=5000
 API_BASE_URL=https://auth.srs-ssms.com/api/dev
+```
 
 Jalankan backend:
 
@@ -73,11 +106,11 @@ Jalankan backend:
 npm run dev
 ```
 
-Backend berjalan di `http://localhost:5000`
+✅ Backend berjalan di `http://localhost:5000`
 
 ### 3. Setup Frontend
 
-Buka terminal baru:
+Buka **terminal baru** (jangan tutup terminal backend):
 
 ```bash
 cd frontend
@@ -85,43 +118,60 @@ npm install
 npm run dev
 ```
 
-Frontend berjalan di `http://localhost:5173`
+✅ Frontend berjalan di `http://localhost:5173`
 
-### 4. Login
+### 4. Buka Aplikasi
 
-Buka browser ke `http://localhost:5173` dan login dengan:
+Buka browser dan akses `http://localhost:5173`, lalu login dengan:
 
-- **Email:** programmer@da
-- **Password:** Prog123!
+```
+Email    : programmer@da
+Password : Prog123!
+```
 
-## API Endpoints
+---
 
-### Login
+## 🔌 API Endpoints
 
+### 🔐 Login
+
+```http
 POST https://auth.srs-ssms.com/api/dev/login
 Content-Type: application/x-www-form-urlencoded
-Body:
-email=programmer@da
-password=Prog123!
+```
 
-Response sukses:
+**Request Body:**
+
+```
+email=programmer@da&password=Prog123!
+```
+
+**Response Sukses:**
 
 ```json
 {
   "statusCode": 1,
   "message": "Login berhasil.",
   "data": {
+    "email": "programmer@da",
+    "name": "I'm Programmer",
+    "department": "Digital Architect",
+    "position": "Programmer",
     "api_token": "xxx|xxxxx"
   }
 }
 ```
 
-### List Items
+---
 
+### 📋 List Items
+
+```http
 GET https://auth.srs-ssms.com/api/dev/list-items
 Authorization: Bearer {api_token}
+```
 
-Response sukses:
+**Response Sukses:**
 
 ```json
 {
@@ -138,20 +188,37 @@ Response sukses:
 }
 ```
 
-## Catatan Teknis
+---
 
-- Backend berfungsi sebagai proxy untuk menghindari CORS error
-- Data perubahan lokal (tambah/edit/hapus) disimpan di `useRef` sehingga tidak hilang saat Refresh
-- Token disimpan di `localStorage` dan dihapus saat logout
-- Komponen Dashboard di-recreate setiap login baru untuk memastikan state bersih
+## 🧠 Catatan Teknis
 
-## Screenshots
+| Aspek                         | Penjelasan                                                                                                                |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| 🔁 **Proxy Backend**          | Backend Express berfungsi sebagai proxy untuk menghindari CORS error saat frontend memanggil API eksternal                |
+| 💾 **Persistent Local State** | Perubahan CRUD disimpan di `useRef` (`deletedIds`, `localEdits`, `localAdds`) sehingga tidak hilang saat Refresh data API |
+| 🔑 **Token Management**       | `api_token` disimpan di `localStorage` dan dihapus otomatis saat logout                                                   |
+| 🔄 **Clean State on Login**   | Komponen Dashboard di-recreate setiap sesi login baru menggunakan `key={token}` untuk memastikan state bersih             |
+| ⚡ **Offline CRUD**           | CRUD tetap berfungsi meskipun backend sedang mati — data tersimpan di state lokal dan akan digabung saat koneksi kembali  |
 
-_(Tambahkan screenshot halaman Login dan Dashboard di sini)_
+---
 
-## Developer
+## 📸 Screenshots
+
+| Login                | Dashboard                |
+| -------------------- | ------------------------ |
+| _(screenshot login)_ | _(screenshot dashboard)_ |
+
+---
+
+## 👨‍💻 Developer
 
 **Gredynov Sitanggang**
 
-- GitHub: [GalvaNova](https://github.com/GalvaNova)
-- LinkedIn: [gredynov-sitanggang](https://www.linkedin.com/in/gredynov-sitanggang/)
+[![GitHub](https://img.shields.io/badge/GitHub-GalvaNova-181717?style=flat&logo=github)](https://github.com/GalvaNova)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-gredynov--sitanggang-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/gredynov-sitanggang/)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ for PT SSMS Technical Test</sub>
+</div>
