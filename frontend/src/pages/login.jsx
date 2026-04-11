@@ -20,6 +20,7 @@ export default function Login() {
       if (response.statusCode === 1) {
         localStorage.setItem("api_token", response.data.api_token);
         localStorage.setItem("user_name", response.data.name);
+        localStorage.setItem("user_department", response.data.department);
         navigate("/dashboard");
       } else {
         setError("Login gagal. Periksa email dan password.");

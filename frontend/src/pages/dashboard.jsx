@@ -20,6 +20,7 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const token = localStorage.getItem("api_token");
   const userName = localStorage.getItem("user_name");
+  const userDepartment = localStorage.getItem("user_department");
 
   useEffect(() => {
     if (!token) {
@@ -140,6 +141,9 @@ export default function Dashboard() {
           <div className="flex items-center gap-3">
             <span className="text-sm text-blue-100 hidden md:block">
               Halo, {userName}
+              <p className="text-blue-200 text-xs hidden md:block">
+                {userDepartment}
+              </p>
             </span>
             <button
               onClick={handleLogout}
@@ -168,13 +172,17 @@ export default function Dashboard() {
               disabled={loading}
               className="flex-1 sm:flex-none text-sm border border-blue-500 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 transition disabled:opacity-50"
             >
-              {loading ? "⏳ Memuat..." : "🔄 Refresh"}
+              {loading ? (
+                <i class="bi bi-hourglass-split"> Loading</i>
+              ) : (
+                <i class="bi bi-arrow-clockwise"> Refresh</i>
+              )}
             </button>
             <button
               onClick={openAdd}
               className="flex-1 sm:flex-none text-sm bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
             >
-              + Tambah
+              <i class="bi bi-plus-square"> Add Item</i>
             </button>
           </div>
         </div>
@@ -182,7 +190,7 @@ export default function Dashboard() {
         {/* Status fetch */}
         {fetchStatus === "success" && (
           <div className="bg-green-50 text-green-700 text-sm px-4 py-2.5 rounded-lg mb-4 flex items-center gap-2">
-            ✅ Data berhasil dimuat — perubahan lokal Anda tetap tersimpan.
+            ✅ Data berhasil dimuat
           </div>
         )}
 
@@ -197,7 +205,7 @@ export default function Dashboard() {
                 onClick={fetchItems}
                 className="mt-2 text-xs underline text-red-700 hover:text-red-900"
               >
-                Coba lagi
+                <i>Coba lagi</i>
               </button>
             </div>
           </div>

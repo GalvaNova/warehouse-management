@@ -54,14 +54,14 @@ export default function ItemList({ items, onEdit, onDelete }) {
                       title="Edit"
                       className="p-1.5 rounded-lg text-blue-600 hover:bg-blue-50 transition"
                     >
-                      ✏️
+                      <i class="bi bi-pencil-square"></i>
                     </button>
                     <button
                       onClick={() => onDelete(item.id)}
                       title="Hapus"
                       className="p-1.5 rounded-lg text-red-500 hover:bg-red-50 transition"
                     >
-                      🗑️
+                      <i class="bi bi-trash"></i>
                     </button>
                   </div>
                 </td>
@@ -102,14 +102,14 @@ export default function ItemList({ items, onEdit, onDelete }) {
                 title="Edit"
                 className="p-2 rounded-lg text-blue-600 hover:bg-blue-50 transition text-base"
               >
-                ✏️
+                <i class="bi bi-pencil-square"></i>
               </button>
               <button
                 onClick={() => onDelete(item.id)}
                 title="Hapus"
                 className="p-2 rounded-lg text-red-500 hover:bg-red-50 transition text-base"
               >
-                🗑️
+                <i class="bi bi-trash"></i>
               </button>
             </div>
           </div>

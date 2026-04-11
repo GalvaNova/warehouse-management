@@ -183,6 +183,30 @@ Authorization: Bearer {api_token}
       "item_name": "Lem dextone Plastic steel 48g",
       "stock": 15,
       "unit": "Pcs"
+    },
+    {
+      "id": 16,
+      "item_name": "Dextone Silicone Red 70g",
+      "stock": 7,
+      "unit": "Pcs"
+    },
+    {
+      "id": 17,
+      "item_name": "Kabel NYYHY 4x1,5",
+      "stock": 5,
+      "unit": "Roll"
+    },
+    {
+      "id": 18,
+      "item_name": "Kabel NYM 2x1,5",
+      "stock": 2,
+      "unit": "Roll"
+    },
+    {
+      "id": 19,
+      "item_name": "Kabel NYYHY 3x1,5",
+      "stock": 1,
+      "unit": "Roll"
     }
   ]
 }
@@ -204,13 +228,13 @@ Authorization: Bearer {api_token}
 
 ## 📸 Screenshots
 
-| Login                | Dashboard                |
-| -------------------- | ------------------------ |
-| _(screenshot login)_ | _(screenshot dashboard)_ |
+| Login                                                                                                                                | Dashboard                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| _<img width="587" height="476" alt="Image" src="https://github.com/user-attachments/assets/d8b2d712-271c-4f2b-935c-225051c6c07e" />_ | _<img width="1134" height="730" alt="Image" src="https://github.com/user-attachments/assets/e38c6374-8606-4936-b7c5-a4dfbb73fa42" />_ |
 
 ---
 
-## 👨‍💻 Developer
+## Developer
 
 **Gredynov Sitanggang**
 
@@ -218,7 +242,3 @@ Authorization: Bearer {api_token}
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-gredynov--sitanggang-0A66C2?style=flat&logo=linkedin)](https://www.linkedin.com/in/gredynov-sitanggang/)
 
 ---
-
-<div align="center">
-  <sub>Built with ❤️ for PT SSMS Technical Test</sub>
-</div>
