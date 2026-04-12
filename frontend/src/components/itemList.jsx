@@ -79,7 +79,7 @@ export default function ItemList({ items, onEdit, onDelete }) {
             className="px-4 py-4 flex items-center justify-between gap-3"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <span className="text-xs text-gray-400 w-5 flex-shrink-0">
+              <span className="text-xs text-gray-400 w-5 shrink-0">
                 {index + 1}
               </span>
               <div className="min-w-0">
@@ -96,7 +96,7 @@ export default function ItemList({ items, onEdit, onDelete }) {
                 </p>
               </div>
             </div>
-            <div className="flex gap-1 flex-shrink-0">
+            <div className="flex gap-1 shrink-0">
               <button
                 onClick={() => onEdit(item)}
                 title="Edit"
