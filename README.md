@@ -10,7 +10,7 @@
 
 ---
 
-## ✨ Fitur Utama
+## Fitur Utama
 
 | Fitur                     | Keterangan                                         |
 | ------------------------- | -------------------------------------------------- |
@@ -26,7 +26,7 @@
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -44,7 +44,7 @@
 
 ---
 
-## 📁 Struktur Project
+## Struktur Project
 
 ```
 warehouse-management/
@@ -71,7 +71,7 @@ warehouse-management/
 
 ---
 
-## 🚀 Cara Menjalankan Lokal
+## Cara Menjalankan Lokal
 
 ### Prasyarat
 
@@ -131,9 +131,9 @@ Password : Prog123!
 
 ---
 
-## 🔌 API Endpoints
+## API Endpoints
 
-### 🔐 Login
+### Login
 
 ```http
 POST https://auth.srs-ssms.com/api/dev/login
@@ -164,7 +164,7 @@ email=programmer@da&password=Prog123!
 
 ---
 
-### 📋 List Items
+### List Items
 
 ```http
 GET https://auth.srs-ssms.com/api/dev/list-items
@@ -214,19 +214,19 @@ Authorization: Bearer {api_token}
 
 ---
 
-## 🧠 Catatan Teknis
+## Catatan Teknis
 
 | Aspek                         | Penjelasan                                                                                                                |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| 🔁 **Proxy Backend**          | Backend Express berfungsi sebagai proxy untuk menghindari CORS error saat frontend memanggil API eksternal                |
-| 💾 **Persistent Local State** | Perubahan CRUD disimpan di `useRef` (`deletedIds`, `localEdits`, `localAdds`) sehingga tidak hilang saat Refresh data API |
-| 🔑 **Token Management**       | `api_token` disimpan di `localStorage` dan dihapus otomatis saat logout                                                   |
-| 🔄 **Clean State on Login**   | Komponen Dashboard di-recreate setiap sesi login baru menggunakan `key={token}` untuk memastikan state bersih             |
-| ⚡ **Offline CRUD**           | CRUD tetap berfungsi meskipun backend sedang mati — data tersimpan di state lokal dan akan digabung saat koneksi kembali  |
+| **Proxy Backend**          | Backend Express berfungsi sebagai proxy untuk menghindari CORS error saat frontend memanggil API eksternal                |
+| **Persistent Local State** | Perubahan CRUD disimpan di `useRef` (`deletedIds`, `localEdits`, `localAdds`) sehingga tidak hilang saat Refresh data API |
+| **Token Management**       | `api_token` disimpan di `localStorage` dan dihapus otomatis saat logout                                                   |
+| **Clean State on Login**   | Komponen Dashboard di-recreate setiap sesi login baru menggunakan `key={token}` untuk memastikan state bersih             |
+| **Offline CRUD**           | CRUD tetap berfungsi meskipun backend sedang mati — data tersimpan di state lokal dan akan digabung saat koneksi kembali  |
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 | Login                                                                                                                                | Dashboard                                                                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
